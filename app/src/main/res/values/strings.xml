@@ -9,4 +9,7 @@
     <string name="Login">Login</string>
     <string name="Create_account">Create Account</string>
     <string name="Shoe_Store">Shoe Store</string>
+    <string name="Welcome_text">Welcome to the shoe store app, your one stop shop for managing your shoe store.
+        \n\nWe hope that you will love this app as much as we loved creating it.</string>
+    <string name="Continue">Continue</string>
 </resources>
