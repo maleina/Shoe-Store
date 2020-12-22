@@ -14,4 +14,7 @@
         \n\nThis app functions as a typical Android app so you should have no trouble learning to use it. In fact, it should be self-explanatory.</string>
     <string name="Continue">Continue</string>
     <string name="Welcome">Welcome</string>
+    <string name="Instructions">Instructions</string>
+    <string name="Instruction_text">You will need to add some shoe inventory in order to begin.</string>
+    <string name="Start">Start</string>
 </resources>
