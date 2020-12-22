@@ -23,11 +23,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:fontFamily="@font/lobster"
                 android:text="@string/Shoe_Store"
-                android:textAlignment="center"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="36sp" />
+                style="@style/Logo_style" />
 
             <TextView
                 android:id="@+id/email_label"
