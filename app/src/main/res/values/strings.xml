@@ -10,6 +10,8 @@
     <string name="Create_account">Create Account</string>
     <string name="Shoe_Store">Shoe Store</string>
     <string name="Welcome_text">Welcome to the shoe store app, your one stop shop for managing your shoe store.
-        \n\nWe hope that you will love this app as much as we loved creating it.</string>
+        \n\nWe hope that you will love this app as much as we loved creating it.
+        \n\nThis app functions as a typical Android app so you should have no trouble learning to use it. In fact, it should be self-explanatory.</string>
     <string name="Continue">Continue</string>
+    <string name="Welcome">Welcome</string>
 </resources>
