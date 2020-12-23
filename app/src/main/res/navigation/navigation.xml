@@ -7,15 +7,23 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.udacity.shoestore.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_welcome"
+            app:destination="@id/welcome" />
+    </fragment>
     <fragment
         android:id="@+id/welcome"
-        android:name="com.udacity.shoestore.Welcome"
+        android:name="com.udacity.shoestore.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcome_to_instructions"
+            app:destination="@id/instructions" />
+    </fragment>
     <fragment
         android:id="@+id/instructions"
-        android:name="com.udacity.shoestore.Instructions"
+        android:name="com.udacity.shoestore.InstructionsFragment"
         android:label="fragment_instructions"
         tools:layout="@layout/fragment_instructions" />
 </navigation>
