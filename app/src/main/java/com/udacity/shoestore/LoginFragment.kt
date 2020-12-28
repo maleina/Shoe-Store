@@ -21,7 +21,7 @@ class LoginFragment : Fragment() {
             inflater, R.layout.fragment_login, container, false)
         binding.loginButton.setOnClickListener { view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcome()) }
         binding.createAccountButton.setOnClickListener { view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcome()) }
-        (activity as AppCompatActivity).supportActionBar?.title = "Shoe Store"
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.Login_Fragment_Title)
         return binding.root
     }
 

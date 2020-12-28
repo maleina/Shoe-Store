@@ -20,7 +20,7 @@ class WelcomeFragment : Fragment() {
         val binding: FragmentWelcomeBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_welcome, container, false)
         binding.continueButton.setOnClickListener { view: View -> findNavController().navigate(WelcomeFragmentDirections.actionWelcomeToInstructions()) }
-        (activity as AppCompatActivity).supportActionBar?.title = "Store Welcome"
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.Welcome_Fragment_Title)
         return binding.root
     }
 

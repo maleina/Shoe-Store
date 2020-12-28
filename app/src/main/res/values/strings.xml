@@ -17,4 +17,7 @@
     <string name="Instructions">Instructions</string>
     <string name="Instruction_text">You will need to add some shoe inventory in order to begin.</string>
     <string name="Start">Start</string>
+    <string name="Login_Fragment_Title">Shoe Store</string>
+    <string name="Welcome_Fragment_Title">Store Welcome</string>
+    <string name="Instructions_Fragment_Title">Store Instructions</string>
 </resources>

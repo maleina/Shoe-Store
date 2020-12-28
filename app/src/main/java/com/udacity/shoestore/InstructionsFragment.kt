@@ -18,7 +18,7 @@ class InstructionsFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding: FragmentInstructionsBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_instructions, container, false)
-        (activity as AppCompatActivity).supportActionBar?.title = "Store Instructions"
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.Instructions_Fragment_Title)
         return binding.root
     }
 
