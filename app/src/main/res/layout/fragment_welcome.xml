@@ -26,13 +26,6 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/logo_label"
-                    style="@style/Logo_style"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Shoe_Store" />
-
-                <TextView
                     android:id="@+id/logo_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
