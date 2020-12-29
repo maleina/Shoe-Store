@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         Timber.plant(Timber.DebugTree())
 
         navController = this.findNavController(R.id.myNavHostFragment)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
+        val topLevelFragments = setOf(R.id.loginFragment, R.id.welcomeFragment, R.id.instructionsFragment, R.id.shoeListFragment)
+        val appBarConfiguration = AppBarConfiguration(topLevelFragments)
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
 
 

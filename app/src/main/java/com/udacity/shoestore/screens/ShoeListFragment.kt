@@ -3,10 +3,9 @@ package com.udacity.shoestore.screens
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
+import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.NavigationDirections
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 
@@ -34,7 +33,15 @@ class ShoeListFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
+
+        return when (item.itemId) {
+            R.id.options_menu_logout -> {
+                findNavController().navigate(NavigationDirections.actionGlobalLoginFragment())
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+        //return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                //|| super.onOptionsItemSelected(item)
     }
 }
