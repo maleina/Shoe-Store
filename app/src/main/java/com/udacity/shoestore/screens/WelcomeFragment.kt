@@ -23,7 +23,6 @@ class WelcomeFragment : Fragment() {
         binding.continueButton.setOnClickListener { view: View -> findNavController().navigate(
             WelcomeFragmentDirections.actionWelcomeToInstructions()
         ) }
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.Welcome_Fragment_Title)
         return binding.root
     }
 

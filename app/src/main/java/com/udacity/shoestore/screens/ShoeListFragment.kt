@@ -24,7 +24,6 @@ class ShoeListFragment : Fragment() {
         val binding: FragmentShoeListBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false
         )
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.Shoe_list_title)
         setHasOptionsMenu(true)
         return binding.root
     }

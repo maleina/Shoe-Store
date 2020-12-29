@@ -26,7 +26,6 @@ class LoginFragment : Fragment() {
         binding.createAccountButton.setOnClickListener { view: View -> view.findNavController().navigate(
             LoginFragmentDirections.actionLoginFragmentToWelcome()
         ) }
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.Login_Fragment_Title)
         return binding.root
     }
 

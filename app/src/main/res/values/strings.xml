@@ -17,10 +17,10 @@
     <string name="Instructions">Instructions</string>
     <string name="Instruction_text">You will need to add some shoe inventory in order to begin.</string>
     <string name="Start">Start</string>
-    <string name="Login_Fragment_Title">Shoe Store</string>
-    <string name="Welcome_Fragment_Title">Store Welcome</string>
-    <string name="Instructions_Fragment_Title">Store Instructions</string>
+    <string name="Login_Fragment_Title">Login</string>
+    <string name="Welcome_Fragment_Title">Welcome!</string>
+    <string name="Instructions_Fragment_Title">Instructions</string>
     <string name="FAB_description">Add shoe button</string>
-    <string name="Shoe_list_title">Shoe List</string>
+    <string name="ShoeList_Fragment_Title">Shoe List</string>
     <string name="Logout">Logout</string>
 </resources>

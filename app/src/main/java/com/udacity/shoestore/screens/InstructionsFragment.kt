@@ -23,7 +23,6 @@ class InstructionsFragment : Fragment() {
         binding.startButton.setOnClickListener { view: View -> findNavController().navigate(
             InstructionsFragmentDirections.actionInstructionsToShoeListFragment()
         ) }
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.Instructions_Fragment_Title)
         return binding.root
     }
 
