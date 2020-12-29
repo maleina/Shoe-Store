@@ -1,4 +1,4 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.screens
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -19,8 +20,12 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding: FragmentLoginBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_login, container, false)
-        binding.loginButton.setOnClickListener { view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcome()) }
-        binding.createAccountButton.setOnClickListener { view: View -> view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcome()) }
+        binding.loginButton.setOnClickListener { view: View -> view.findNavController().navigate(
+            LoginFragmentDirections.actionLoginFragmentToWelcome()
+        ) }
+        binding.createAccountButton.setOnClickListener { view: View -> view.findNavController().navigate(
+            LoginFragmentDirections.actionLoginFragmentToWelcome()
+        ) }
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.Login_Fragment_Title)
         return binding.root
     }
