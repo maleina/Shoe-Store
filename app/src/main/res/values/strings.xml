@@ -21,4 +21,5 @@
     <string name="Welcome_Fragment_Title">Store Welcome</string>
     <string name="Instructions_Fragment_Title">Store Instructions</string>
     <string name="FAB_description">Add shoe button</string>
+    <string name="Shoe_list_title">Shoe List</string>
 </resources>
