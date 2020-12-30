@@ -23,4 +23,12 @@
     <string name="FAB_description">Add shoe button</string>
     <string name="ShoeList_Fragment_Title">Shoe List</string>
     <string name="Logout">Logout</string>
+    <string name="Shoe_Name">Shoe Name</string>
+    <string name="Company">Company</string>
+    <string name="Shoe_Size">Shoe Size</string>
+    <string name="Description">Description</string>
+    <string name="Enter_New_Shoe_Details">Please enter new shoe details:</string>
+    <string name="Add">Add</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Detail_Fragment_Title">Add Shoe</string>
 </resources>

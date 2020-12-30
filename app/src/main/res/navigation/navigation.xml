@@ -52,6 +52,6 @@
         app:popUpToInclusive="true" />
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.udacity.shoestore.DetailFragment"
-        android:label="DetailFragment" />
+        android:name="com.udacity.shoestore.screens.DetailFragment"
+        android:label="@string/Detail_Fragment_Title" />
 </navigation>

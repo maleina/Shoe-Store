@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.NavigationDirections
 import com.udacity.shoestore.R
@@ -24,6 +25,9 @@ class ShoeListFragment : Fragment() {
             inflater, R.layout.fragment_shoe_list, container, false
         )
         setHasOptionsMenu(true)
+        binding.floatingActionButton.setOnClickListener { view: View -> view.findNavController().navigate(
+            ShoeListFragmentDirections.actionShoeListFragmentToDetailFragment()
+        ) }
         return binding.root
     }
 
