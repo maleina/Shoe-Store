@@ -24,8 +24,6 @@ class MainActivity : AppCompatActivity() {
         val topLevelFragments = setOf(R.id.loginFragment, R.id.welcomeFragment, R.id.instructionsFragment, R.id.shoeListFragment)
         val appBarConfiguration = AppBarConfiguration(topLevelFragments)
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
-
-
     }
 
 

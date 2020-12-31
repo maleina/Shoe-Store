@@ -4,30 +4,48 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.MainActivityViewModel
 import com.udacity.shoestore.NavigationDirections
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ListRowBinding
+import kotlinx.android.synthetic.main.list_row.view.*
+
 
 class ShoeListFragment : Fragment() {
+    private lateinit var viewModel: MainActivityViewModel
+    private lateinit var binding: FragmentShoeListBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
         // Inflate the layout for this fragment
-        val binding: FragmentShoeListBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_shoe_list, container, false
-        )
+        binding = DataBindingUtil.inflate(
+           inflater, R.layout.fragment_shoe_list, container, false)
+        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
+        viewModel.shoeList.observe(viewLifecycleOwner, Observer {
+            viewModel.shoeList.value?.map {
+                val listItemBinding = DataBindingUtil.inflate<ListRowBinding>(layoutInflater, R.layout.list_row, binding.shoeListHolder, false)
+                val listItem = listItemBinding.listItemCard
+                listItem.list_item.text = "${it.company} ${it.name}\n${it.description}, Size: ${it.size}"
+                binding.shoeListHolder.addView(listItem)
+            }
+        })
+
         setHasOptionsMenu(true)
+
         binding.floatingActionButton.setOnClickListener { view: View -> view.findNavController().navigate(
             ShoeListFragmentDirections.actionShoeListFragmentToDetailFragment()
         ) }
+
         return binding.root
     }
 
@@ -45,7 +63,5 @@ class ShoeListFragment : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-        //return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                //|| super.onOptionsItemSelected(item)
     }
 }
