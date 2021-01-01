@@ -5,7 +5,6 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.MainActivityViewModel
@@ -14,10 +13,12 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ListRowBinding
 import kotlinx.android.synthetic.main.list_row.view.*
+import androidx.fragment.app.activityViewModels
 
 
 class ShoeListFragment : Fragment() {
-    private lateinit var viewModel: MainActivityViewModel
+
+    private val viewModel: MainActivityViewModel by activityViewModels()
     private lateinit var binding: FragmentShoeListBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -26,13 +27,14 @@ class ShoeListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
            inflater, R.layout.fragment_shoe_list, container, false)
-        viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         viewModel.shoeList.observe(viewLifecycleOwner, Observer {
-            viewModel.shoeList.value?.map {
+            println("Shoe List Frag")
+            println(viewModel.shoeList.value)
+            viewModel.shoeList.value?.asReversed()?.map {
                 val listItemBinding = DataBindingUtil.inflate<ListRowBinding>(layoutInflater, R.layout.list_row, binding.shoeListHolder, false)
                 val listItem = listItemBinding.listItemCard
                 listItem.list_item.text = "${it.company} ${it.name}\n${it.description}, Size: ${it.size}"
