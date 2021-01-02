@@ -32,8 +32,6 @@ class ShoeListFragment : Fragment() {
         binding.lifecycleOwner = this
 
         viewModel.shoeList.observe(viewLifecycleOwner, Observer {
-            println("Shoe List Frag")
-            println(viewModel.shoeList.value)
             viewModel.shoeList.value?.asReversed()?.map {
                 val listItemBinding = DataBindingUtil.inflate<ListRowBinding>(layoutInflater, R.layout.list_row, binding.shoeListHolder, false)
                 val listItem = listItemBinding.listItemCard
