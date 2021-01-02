@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ShoeStore</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Email">Email</string>
     <string name="Enter_your_email">Your email address</string>
@@ -15,7 +14,10 @@
     <string name="Continue">Continue</string>
     <string name="Welcome_onboard">Welcome Onboard!</string>
     <string name="Instructions">Instructions</string>
-    <string name="Instruction_text">You will need to add some shoe inventory in order to begin.</string>
+    <string name="Instruction_text">The following screen will show you a list of your inventory.
+        \n\nYou can add additional items to the inventory by clicking on the red button (+).
+        \n\nAfter adding the new item, you will be returned to the inventory list.
+        \n\nYour newly added item will appear at the top of the list.</string>
     <string name="Start">Start</string>
     <string name="Login_Fragment_Title">Login</string>
     <string name="Welcome_Fragment_Title">Welcome!</string>
