@@ -12,7 +12,8 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentDetailBinding
 import com.udacity.shoestore.models.Shoe
 import androidx.fragment.app.activityViewModels
-
+import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 
 
 class DetailFragment : Fragment() {
@@ -32,6 +33,13 @@ class DetailFragment : Fragment() {
 
         binding.viewModel = viewModel
         binding.shoe = Shoe("",0.0,"","")
+
+        viewModel.eventShoeAdded.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                findNavController().popBackStack()
+                viewModel.shoeAddedComplete()
+            }
+        })
 
         binding.cancelButton.setOnClickListener { findNavController().popBackStack() }
         return binding.root

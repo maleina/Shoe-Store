@@ -13,9 +13,13 @@ class MainActivityViewModel : ViewModel() {
     val shoeList : LiveData<MutableList<Shoe>>
         get() = _shoeList
 
+    private var _eventShoeAdded = MutableLiveData<Boolean>()
+    val eventShoeAdded: LiveData<Boolean>
+        get() = _eventShoeAdded
 
     init {
-         //Initialize shoe list with dummy values
+        _eventShoeAdded.value = false
+        //Initialize shoe list with dummy values
         _shoeList.value = mutableListOf(
             Shoe("Cloudfoam Runner", 8.5, "Adidas", "Easy, everyday runners"),
             Shoe("Classic Clog", 5.0, "Crocs", "Unisex iconic clog"),
@@ -24,14 +28,18 @@ class MainActivityViewModel : ViewModel() {
 
     fun addNewShoe(view: View, shoe: Shoe) {
 
-        // Not real validation, but replace black values with dashes
+        // Replace empty values with dashes (text) or 0.0 (size) if the user leaves values blank
         val inputName = if (shoe.name == "") "-" else shoe.name
         val inputSize: Double = if (shoe.size.toString() == "") 0.0 else shoe.size.toString().toDouble()
         val inputCompany = if (shoe.company == "") "-" else shoe.company
         val inputDescription = if (shoe.description == "") "-" else shoe.description
 
         _shoeList.value?.add(Shoe(inputName, inputSize, inputCompany, inputDescription))
-        view.findNavController().popBackStack()
+        _eventShoeAdded.value = true
+    }
+
+    fun shoeAddedComplete() {
+        _eventShoeAdded.value = false
     }
 
 }
