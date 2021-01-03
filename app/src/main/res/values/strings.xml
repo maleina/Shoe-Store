@@ -13,9 +13,9 @@
         \n\nThis app functions like a typical Android app so you should have no trouble learning to use it. In fact, it should be self-explanatory.</string>
     <string name="Continue">Continue</string>
     <string name="Welcome_onboard">Welcome Onboard!</string>
-    <string name="Instructions">Instructions</string>
-    <string name="Instruction_text">The following screen will show you a list of your inventory.
-        \n\nYou can add additional items to the inventory by clicking on the red button (+).
+    <string name="Instructions">Managing Your Inventory:</string>
+    <string name="Instruction_text">The following screen will show you a list of your shoe inventory.
+        \n\nYou can add additional items to the list by clicking on the red button (+).
         \n\nAfter adding the new item, you will be returned to the inventory list.
         \n\nYour newly added item will appear at the top of the list.</string>
     <string name="Start">Start</string>
@@ -33,4 +33,5 @@
     <string name="Add">Add</string>
     <string name="Cancel">Cancel</string>
     <string name="Detail_Fragment_Title">Add Shoe</string>
+    <string name="Your_Shoe_Inventory">Your Shoe Inventory:</string>
 </resources>

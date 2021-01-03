@@ -32,10 +32,11 @@ class DetailFragment : Fragment() {
         )
 
         binding.viewModel = viewModel
+        // initialize shoe object
         binding.shoe = Shoe("",0.0,"","")
 
-        viewModel.eventShoeAdded.observe(viewLifecycleOwner, Observer {
-            if (it) {
+        viewModel.eventShoeAdded.observe(viewLifecycleOwner, Observer { isAdded ->
+            if (isAdded) {
                 findNavController().popBackStack()
                 viewModel.shoeAddedComplete()
             }

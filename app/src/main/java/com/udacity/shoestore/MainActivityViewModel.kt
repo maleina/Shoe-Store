@@ -1,10 +1,8 @@
 package com.udacity.shoestore
 
-import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.navigation.findNavController
 import com.udacity.shoestore.models.Shoe
 
 class MainActivityViewModel : ViewModel() {
@@ -13,7 +11,7 @@ class MainActivityViewModel : ViewModel() {
     val shoeList : LiveData<MutableList<Shoe>>
         get() = _shoeList
 
-    private var _eventShoeAdded = MutableLiveData<Boolean>()
+    private val _eventShoeAdded = MutableLiveData<Boolean>()
     val eventShoeAdded: LiveData<Boolean>
         get() = _eventShoeAdded
 
@@ -26,7 +24,7 @@ class MainActivityViewModel : ViewModel() {
             Shoe("Rain Boot", 6.0, "Hunter", "Womens Short Navy Matte Boot"))
     }
 
-    fun addNewShoe(view: View, shoe: Shoe) {
+    fun addNewShoe(shoe: Shoe) {
 
         // Replace empty values with dashes (text) or 0.0 (size) if the user leaves values blank
         val inputName = if (shoe.name == "") "-" else shoe.name

@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/Add"
-                    android:onClick="@{view -> viewModel.addNewShoe(view, shoe)}"/>
+                    android:onClick="@{() -> viewModel.addNewShoe(shoe)}"/>
             </LinearLayout>
 
         </LinearLayout>

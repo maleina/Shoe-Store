@@ -31,6 +31,8 @@ class ShoeListFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
+        // Build and display a card view for each shoe. Display in reverse order so that new objects appear
+        // at the top of the list
         viewModel.shoeList.observe(viewLifecycleOwner, Observer {
             viewModel.shoeList.value?.asReversed()?.map {
                 val listItemBinding = DataBindingUtil.inflate<ListRowBinding>(layoutInflater, R.layout.list_row, binding.shoeListHolder, false)
