@@ -17,7 +17,7 @@
     <string name="Instruction_text">The following screen will show you a list of your shoe inventory.
         \n\nYou can add additional items to the list by clicking on the red button (+).
         \n\nAfter adding the new item, you will be returned to the inventory list.
-        \n\nYour newly added item will appear at the top of the list.</string>
+        \n\nYour newly added item will appear at the bottom of the list.</string>
     <string name="Start">Start</string>
     <string name="Login_Fragment_Title">Login</string>
     <string name="Welcome_Fragment_Title">Welcome!</string>
@@ -34,4 +34,6 @@
     <string name="Cancel">Cancel</string>
     <string name="Detail_Fragment_Title">Add Shoe</string>
     <string name="Your_Shoe_Inventory">Your Shoe Inventory:</string>
+    <string name="Size">"Size: "</string>
+    <string name="Space">" "</string>
 </resources>

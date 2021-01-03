@@ -34,11 +34,15 @@ class ShoeListFragment : Fragment() {
         // Build and display a card view for each shoe. Display in reverse order so that new objects appear
         // at the top of the list
         viewModel.shoeList.observe(viewLifecycleOwner, Observer {
-            viewModel.shoeList.value?.asReversed()?.map {
-                val listItemBinding = DataBindingUtil.inflate<ListRowBinding>(layoutInflater, R.layout.list_row, binding.shoeListHolder, false)
-                val listItem = listItemBinding.listItemCard
-                listItem.list_item.text = "${it.company} ${it.name}\n${it.description}, Size: ${it.size}"
-                binding.shoeListHolder.addView(listItem)
+            for (shoe in it) {
+                DataBindingUtil.inflate<ListRowBinding>(
+                    layoutInflater,
+                    R.layout.list_row,
+                    binding.shoeListHolder,
+                    true
+                ).apply {
+                    this.shoe = shoe
+                }
             }
         })
 
