@@ -4,59 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.WelcomeFragment">
 
-    <ScrollView
+
+    <!-- Constraint Layout used to avoid nesting linear layouts and more easily place the button -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_marginStart="@dimen/margin_left"
+        android:layout_marginEnd="@dimen/margin_right">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/logo_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:text="@string/Welcome_onboard"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:text="@string/Welcome_text"
+            android:textAlignment="viewStart"
+            app:layout_constraintTop_toBottomOf="@+id/logo_view" />
 
-                <TextView
-                    android:id="@+id/logo_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/general_margin"
-                    android:layout_marginBottom="@dimen/general_margin"
-                    android:text="@string/Welcome_onboard"
-                    android:textAlignment="viewStart"
-                    android:textAllCaps="false"
-                    android:textSize="24sp" />
+        <Button
+            android:id="@+id/continue_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_margin"
+            android:text="@string/Continue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
 
-                <TextView
-                    android:id="@+id/welcome_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/general_margin"
-                    android:text="@string/Welcome_text"
-                    android:textAlignment="viewStart" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/continue_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Continue"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

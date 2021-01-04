@@ -34,6 +34,6 @@
     <string name="Cancel">Cancel</string>
     <string name="Detail_Fragment_Title">Add Shoe</string>
     <string name="Your_Shoe_Inventory">Your Shoe Inventory:</string>
-    <string name="Size">"Size: "</string>
+    <string name="Size">", Size: "</string>
     <string name="Space">" "</string>
 </resources>

@@ -10,7 +10,9 @@
             type="com.udacity.shoestore.MainActivityViewModel" />
     </data>
 
-    <!-- -->
+    <!-- Constraint view used here especially to facilitate placing the floating action button
+    independently of the other items-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,6 +30,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- ScrollView necessary because displaying a number of inventory (list) items will likely exceed the
+        vertical screen space -->
+
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
@@ -37,6 +42,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_list_label">
 
+            <!-- Will hold each of the shoe list rows (cards) -->
             <LinearLayout
                 android:id="@+id/shoe_list_holder"
                 android:layout_width="match_parent"
