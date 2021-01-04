@@ -28,11 +28,11 @@ class ShoeListFragment : Fragment() {
         binding = DataBindingUtil.inflate(
            inflater, R.layout.fragment_shoe_list, container, false)
 
+        // Initialize the view model and lifecycle owner
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        // Build and display a card view for each shoe. Display in reverse order so that new objects appear
-        // at the top of the list
+        // Build and display a card view for each shoe.
         viewModel.shoeList.observe(viewLifecycleOwner, Observer {
             for (shoe in it) {
                 DataBindingUtil.inflate<ListRowBinding>(
@@ -46,8 +46,10 @@ class ShoeListFragment : Fragment() {
             }
         })
 
+        // Add the options menu
         setHasOptionsMenu(true)
 
+        // Add listener for FAB, which will navigate to the detail screen so that a new shoe can be added
         binding.floatingActionButton.setOnClickListener { view: View -> view.findNavController().navigate(
             ShoeListFragmentDirections.actionShoeListFragmentToDetailFragment()
         ) }
@@ -55,11 +57,13 @@ class ShoeListFragment : Fragment() {
         return binding.root
     }
 
+    // Inflate the options menu
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.overflow_menu, menu)
     }
 
+    // If the user clicks on "logout" then navigate back to the login screen
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         return when (item.itemId) {

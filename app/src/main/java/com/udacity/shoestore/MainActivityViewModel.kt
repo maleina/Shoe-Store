@@ -7,10 +7,13 @@ import com.udacity.shoestore.models.Shoe
 
 class MainActivityViewModel : ViewModel() {
 
+    // list of all shoe inventory items
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
     val shoeList : LiveData<MutableList<Shoe>>
         get() = _shoeList
 
+    // flag that tracks whether a shoe has been added
+    // necessary to avoid referencing fragments in the view model (to avoid memory leaks)
     private val _eventShoeAdded = MutableLiveData<Boolean>()
     val eventShoeAdded: LiveData<Boolean>
         get() = _eventShoeAdded
@@ -32,6 +35,7 @@ class MainActivityViewModel : ViewModel() {
         val inputCompany = if (shoe.company == "") "-" else shoe.company
         val inputDescription = if (shoe.description == "") "-" else shoe.description
 
+        // Add shoe and set the flag to true to trigger observer on shoe list screen
         _shoeList.value?.add(Shoe(inputName, inputSize, inputCompany, inputDescription))
         _eventShoeAdded.value = true
     }

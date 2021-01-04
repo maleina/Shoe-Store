@@ -18,9 +18,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        Timber.plant(Timber.DebugTree())
 
+        // Set up navigation
         navController = this.findNavController(R.id.myNavHostFragment)
+        // Pass in the login, welcome, instructions and shoe list fragements as top level so that
+        // the back button will not be enabled on them
         val topLevelFragments = setOf(R.id.loginFragment, R.id.welcomeFragment, R.id.instructionsFragment, R.id.shoeListFragment)
         val appBarConfiguration = AppBarConfiguration(topLevelFragments)
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)

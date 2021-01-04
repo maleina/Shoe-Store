@@ -20,12 +20,17 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding: FragmentLoginBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_login, container, false)
+
+        // Add listener for login button which will simply navigate to the welcome screen
         binding.loginButton.setOnClickListener { view: View -> view.findNavController().navigate(
             LoginFragmentDirections.actionLoginFragmentToWelcome()
         ) }
+
+        // Add listener for create account button which will simply navigate to the welcome screen
         binding.createAccountButton.setOnClickListener { view: View -> view.findNavController().navigate(
             LoginFragmentDirections.actionLoginFragmentToWelcome()
         ) }
+
         return binding.root
     }
 

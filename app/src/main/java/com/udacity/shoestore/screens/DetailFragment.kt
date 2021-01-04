@@ -31,10 +31,12 @@ class DetailFragment : Fragment() {
             inflater, R.layout.fragment_detail, container, false
         )
 
+        // Initialize view model and "empty" shoe object
         binding.viewModel = viewModel
-        // initialize shoe object
         binding.shoe = Shoe("",0.0,"","")
 
+        // Observer for event when shoe is added. It will navigate back to the shoe list
+        // where the new shoe will be displayed at the bottom of the list
         viewModel.eventShoeAdded.observe(viewLifecycleOwner, Observer { isAdded ->
             if (isAdded) {
                 findNavController().popBackStack()
@@ -42,6 +44,7 @@ class DetailFragment : Fragment() {
             }
         })
 
+        // Add listener for cancel button which will simply navigate bac to the shoe list screen
         binding.cancelButton.setOnClickListener { findNavController().popBackStack() }
         return binding.root
     }
