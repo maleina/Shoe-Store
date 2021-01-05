@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         // Set up navigation
         navController = this.findNavController(R.id.myNavHostFragment)
-        // Pass in the login, welcome, instructions and shoe list fragements as top level so that
+        // Pass in the login and shoe list fragments as top level so that
         // the back button will not be enabled on them
-        val topLevelFragments = setOf(R.id.loginFragment, R.id.welcomeFragment, R.id.instructionsFragment, R.id.shoeListFragment)
+        val topLevelFragments = setOf(R.id.loginFragment, R.id.shoeListFragment)
         val appBarConfiguration = AppBarConfiguration(topLevelFragments)
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
     }
